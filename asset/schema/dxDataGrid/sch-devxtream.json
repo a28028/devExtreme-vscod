@@ -148,7 +148,7 @@
                     "type": "string",
                     "default": ""
                 },
-               
+
                 "popup": {
                     "type": "string"
                 },

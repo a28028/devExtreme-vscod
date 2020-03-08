@@ -2,20 +2,20 @@
 
 import * as path from 'path';
 import * as vscode from 'vscode';
-import { configurationSettings } from './globals/enums';
+//import { configurationSettings } from './globals/enums';
 
 export class DevxEditorPanel {
     public static currentPanel: DevxEditorPanel | undefined;
 
     private static readonly viewType: string = 'DevxEditor';
-    private static readonly extensionPrefix: string = 'vscode-devx-editor';
+   // private static readonly extensionPrefix: string = 'vscode-devx-editor';
 
     private readonly _panel: vscode.WebviewPanel;
     private readonly _extensionPath: string;
     private _disposables: vscode.Disposable[] = [];
     private _currentEditor: vscode.TextEditor;
 
-    private constructor(extensionPath: string, column: vscode.ViewColumn, theme: string) {
+    private constructor(extensionPath: string, column: vscode.ViewColumn) {
         this._extensionPath = extensionPath;
         this._currentEditor = vscode.window.activeTextEditor;
         this._panel = vscode.window.createWebviewPanel(DevxEditorPanel.viewType, "devx editor", column, {
@@ -25,7 +25,7 @@ export class DevxEditorPanel {
                 vscode.Uri.file(path.join(this._extensionPath, 'asset'))
             ]
         });
-        this._panel.webview.html = this.getHtmlForWebview(this._extensionPath, theme);
+        this._panel.webview.html = this.getHtmlForWebview(this._extensionPath);
 
         this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
 
@@ -51,13 +51,13 @@ export class DevxEditorPanel {
     // tslint:disable-next-line:function-name
     public static CreateOrShow(extensionPath: string): void {
         const column = vscode.ViewColumn.Three;
-        const config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(this.extensionPrefix);
-        const theme: string = config.get(configurationSettings.theme);
+        //const config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration(this.extensionPrefix);
+       // const theme: string = config.get(configurationSettings.theme);
 
         if (DevxEditorPanel.currentPanel) {
             DevxEditorPanel.currentPanel._panel.reveal(column);
         } else {
-            DevxEditorPanel.currentPanel = new DevxEditorPanel(extensionPath, column, theme);
+            DevxEditorPanel.currentPanel = new DevxEditorPanel(extensionPath, column);
         }
     }
 
@@ -95,7 +95,7 @@ export class DevxEditorPanel {
         this._panel.webview.postMessage({ json: json });
     }
 
-    private getHtmlForWebview(extensionPath: string, theme: string): string {
+    private getHtmlForWebview(extensionPath: string): string {
 
         const indexScriptPathOnDisk = vscode.Uri.file(path.join(extensionPath, 'asset/schema', 'index.js'));
         const indexScriptUri = indexScriptPathOnDisk.with({ scheme: 'vscode-resource' });
