@@ -1,0 +1,70 @@
+{
+    "name": "vscode-devx-editor",
+    "displayName": "devxteram Editor",
+    "description": "Generate a tree config view editor of the active DevExtreme document",
+    "version": "0.1.0",
+    "publisher": "rajaee",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "icon": "resources/icon.png",
+    "categories": [
+        "Other"
+    ],
+    "homepage": "https://github.com/sunmorgus/vscode-json-editor",
+    "keywords": [
+        "DevExtreme",
+        "editor",
+        "tree",
+        "preview"
+    ],
+    "activationEvents": [
+        "onLanguage:json",
+        "onCommand:vscode-devx-editor.start"
+    ],
+    "main": "./out/src/extension",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sunmorgus/vscode-json-editor.git"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "vscode-devx-editor.start",
+                "title": "Start devx editor session",
+                "category": "devx editor"
+            }
+        ],
+        "configuration": {
+            "title": "devx Editor",
+            "properties": {
+                "vscode-json-editor.theme": {
+                    "type": "string",
+                    "default": "light",
+                    "description": "Set the theme for the editor ('light', 'dark'). Note: you must close/reopen any existing editors for the change to take effect.",
+                    "enum": [
+                        "light",
+                        "dark"
+                    ]
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "aqua": "^1.0.1",
+        "tslint": "^5.8.0",
+        "tslint-microsoft-contrib": "^5.0.3",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {}
+}
