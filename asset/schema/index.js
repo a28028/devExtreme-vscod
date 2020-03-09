@@ -11,25 +11,25 @@ devexpdesigner.run = function (json_forms_container, intype = 'dxForm', data = f
   var _self = this;
 
   if (typeof schema != "undefined") {
-    _self.dorun( window.schema[this.intype], data)
+    _self.dorun(window.schema[this.intype], data)
   }
   $.getJSON(`asset/schema/${this.intype}/sch-devxtream.json?_=` + Math.random(1, 1000000), function (intypeschema) {
     _self.dorun(intypeschema, data)
   })
 }
-  devexpdesigner.dorun = function (schema, data = false) {
-    this.schema = schema;
-    var BrutusinForms = brutusin["json-forms"];
-    this.bf = BrutusinForms.create(schema);
-    var container = document.getElementById(this.json_forms_container);
-    $('#' + this.json_forms_container).html('');
-    if (data) {
-      this.bf.render(container, data);
-    }
-    else {
-      this.bf.render(container);
-    }
+devexpdesigner.dorun = function (schema, data = false) {
+  this.schema = schema;
+  var BrutusinForms = brutusin["json-forms"];
+  this.bf = BrutusinForms.create(schema);
+  var container = document.getElementById(this.json_forms_container);
+  $('#' + this.json_forms_container).html('');
+  if (data) {
+    this.bf.render(container, data);
   }
+  else {
+    this.bf.render(container);
+  }
+}
 
 devexpdesigner.apply = function () {
   var datajson = this.bf.getData();
@@ -42,11 +42,11 @@ devexpdesigner.apply = function () {
 
 devexpdesigner.loadJson = function () {
   var data = JSON.parse($("#textareajson").val());
-  if(data){
-    if(this.intype = 'dxDataGrid'){
-      if(data.columns ){
-        data.columns.forEach(function (column , index){
-          if(typeof column  == "string" ){
+  if (data) {
+    if (this.intype == 'dxDataGrid') {
+      if (data.columns) {
+        data.columns.forEach(function (column, index) {
+          if (typeof column == "string") {
             var newcolumn = new Object();
             newcolumn.dataField = column;
             data.columns[index] = newcolumn;
@@ -54,7 +54,7 @@ devexpdesigner.loadJson = function () {
         })
       }
     }
-    this.dorun( this.schema , data);
+    this.dorun(this.schema, data);
 
   }
 }

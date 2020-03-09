@@ -6,5 +6,6 @@ To start open the command pallete and type `devx`.
 `View>Command Palette> devx Editor: Start devx editor session`
 
 ### 0.0.1
-
+npm install -g vsce
+npm install --save-dev @types/node
 Initial release of vscode-devx-editor
