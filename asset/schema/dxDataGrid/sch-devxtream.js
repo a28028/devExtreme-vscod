@@ -48,6 +48,12 @@ schema.dxDataGrid = {
                 },
                 "maskRules": {
                     "type": "string"
+                },
+                "displayExpr": {
+                    "type": "string"
+                },
+                "valueExpr": {
+                    "type": "string"
                 }
             }
         },
