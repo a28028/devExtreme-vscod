@@ -129,9 +129,21 @@ schema.dxForm = {
             "enum": [
                 "dxTextBox",
                 "dxDateBox",
-                "dxSelectBox",
+                "dxCheckBox",
                 "dxTextArea",
-                "dxCalendar"
+                "dxCalendar",
+                "dxColorBox",
+                "dxDropDownBox",
+                "dxHtmlEditor",
+                "dxLookup",
+                "dxNumberBox",
+                "dxRadioGroup",
+                "dxRangeSlider",
+                "dxSlider",
+                "dxSelectBox",
+                "dxSwitch",
+                "dxTagBox",
+                "dxAutocomplete"
             ]
         },
         "label": {

@@ -37,7 +37,6 @@
                     "items": {
                         "$ref": "#/definitions/tabitem"
                     }
-                    
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
@@ -109,7 +108,7 @@
                 }
             }
         },
-        "tabitem" :{
+        "tabitem": {
             "type": "object",
             "properties": {
                 "title": {
@@ -129,9 +128,21 @@
             "enum": [
                 "dxTextBox",
                 "dxDateBox",
-                "dxSelectBox",
+                "dxCheckBox",
                 "dxTextArea",
-                "dxCalendar"
+                "dxCalendar",
+                "dxColorBox",
+                "dxDropDownBox",
+                "dxHtmlEditor",
+                "dxLookup",
+                "dxNumberBox",
+                "dxRadioGroup",
+                "dxRangeSlider",
+                "dxSlider",
+                "dxSelectBox",
+                "dxSwitch",
+                "dxTagBox",
+                "dxAutocomplete"
             ]
         },
         "label": {
