@@ -37,6 +37,7 @@
                     "items": {
                         "$ref": "#/definitions/tabitem"
                     }
+
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
@@ -108,7 +109,7 @@
                 }
             }
         },
-        "tabitem": {
+        "tabitem" :{
             "type": "object",
             "properties": {
                 "title": {
@@ -208,6 +209,12 @@
         "editorOptions": {
             "type": "object",
             "properties": {
+                "displayExpr": {
+                    "type": "string"
+                },
+                "valueExpr": {
+                    "type": "string"
+                },
                 "items": {
                     "type": "array",
                     "items": {}
@@ -232,6 +239,13 @@
                 },
                 "maskRules": {
                     "type": "string"
+                },
+                "layout" : {
+                    "type": "string",
+                    "enum": [
+                        "horizontal",
+                        "vertical"
+                    ]
                 }
             }
         },

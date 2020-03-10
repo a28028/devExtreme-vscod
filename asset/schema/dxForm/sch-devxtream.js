@@ -109,7 +109,7 @@ schema.dxForm = {
                 }
             }
         },
-        "tabitem" :{
+        "tabitem": {
             "type": "object",
             "properties": {
                 "title": {
@@ -209,6 +209,12 @@ schema.dxForm = {
         "editorOptions": {
             "type": "object",
             "properties": {
+                "displayExpr": {
+                    "type": "string"
+                },
+                "valueExpr": {
+                    "type": "string"
+                },
                 "items": {
                     "type": "array",
                     "items": {}
@@ -233,6 +239,13 @@ schema.dxForm = {
                 },
                 "maskRules": {
                     "type": "string"
+                },
+                "layout": {
+                    "type": "string",
+                    "enum": [
+                        "horizontal",
+                        "vertical"
+                    ]
                 }
             }
         },
