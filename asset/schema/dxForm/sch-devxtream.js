@@ -42,6 +42,9 @@ schema.dxForm = {
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
                 },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
+                },
                 "caption": {
                     "type": "string"
                 }
@@ -80,6 +83,9 @@ schema.dxForm = {
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
                 }
             }
         },
@@ -106,10 +112,13 @@ schema.dxForm = {
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
                 }
             }
         },
-        "tabitem": {
+        "tabitem" :{
             "type": "object",
             "properties": {
                 "title": {
@@ -206,6 +215,20 @@ schema.dxForm = {
                 "type": "boolean"
             }
         },
+        "buttonOptions": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "onClick": {
+                    "type": "string"
+                }
+            }
+        },
         "editorOptions": {
             "type": "object",
             "properties": {
@@ -240,7 +263,7 @@ schema.dxForm = {
                 "maskRules": {
                     "type": "string"
                 },
-                "layout": {
+                "layout" : {
                     "type": "string",
                     "enum": [
                         "horizontal",
@@ -254,7 +277,8 @@ schema.dxForm = {
             "enum": [
                 "",
                 "group",
-                "tabbed"
+                "tabbed",
+                "button"
             ]
         }
     },

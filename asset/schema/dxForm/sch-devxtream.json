@@ -42,6 +42,9 @@
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
                 },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
+                },
                 "caption": {
                     "type": "string"
                 }
@@ -80,6 +83,9 @@
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
                 }
             }
         },
@@ -106,6 +112,9 @@
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
                 }
             }
         },
@@ -206,6 +215,20 @@
                 "type": "boolean"
             }
         },
+        "buttonOptions": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "onClick": {
+                    "type": "string"
+                }
+            }
+        },
         "editorOptions": {
             "type": "object",
             "properties": {
@@ -254,7 +277,8 @@
             "enum": [
                 "",
                 "group",
-                "tabbed"
+                "tabbed",
+                "button"
             ]
         }
     },
