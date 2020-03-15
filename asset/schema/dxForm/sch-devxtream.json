@@ -47,6 +47,9 @@
                 },
                 "caption": {
                     "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -86,6 +89,12 @@
                 },
                 "buttonOptions": {
                     "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -115,6 +124,12 @@
                 },
                 "buttonOptions": {
                     "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -278,7 +293,8 @@
                 "",
                 "group",
                 "tabbed",
-                "button"
+                "button",
+                "empty"
             ]
         }
     },

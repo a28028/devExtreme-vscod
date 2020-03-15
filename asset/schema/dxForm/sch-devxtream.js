@@ -47,6 +47,9 @@ schema.dxForm = {
                 },
                 "caption": {
                     "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -86,6 +89,12 @@ schema.dxForm = {
                 },
                 "buttonOptions": {
                     "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -115,10 +124,16 @@ schema.dxForm = {
                 },
                 "buttonOptions": {
                     "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
-        "tabitem" :{
+        "tabitem": {
             "type": "object",
             "properties": {
                 "title": {
@@ -263,7 +278,7 @@ schema.dxForm = {
                 "maskRules": {
                     "type": "string"
                 },
-                "layout" : {
+                "layout": {
                     "type": "string",
                     "enum": [
                         "horizontal",
@@ -278,7 +293,8 @@ schema.dxForm = {
                 "",
                 "group",
                 "tabbed",
-                "button"
+                "button",
+                "empty"
             ]
         }
     },
