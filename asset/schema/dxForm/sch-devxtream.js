@@ -1,4 +1,4 @@
-schema.dxForm = {
+schema.dxForm ={
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
         "formitems": {
@@ -37,7 +37,6 @@ schema.dxForm = {
                     "items": {
                         "$ref": "#/definitions/tabitem"
                     }
-
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
@@ -246,6 +245,14 @@ schema.dxForm = {
                         "horizontal",
                         "vertical"
                     ]
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "date",
+                        "datetime",
+                        "time"
+                    ]
                 }
             }
         },
@@ -289,4 +296,4 @@ schema.dxForm = {
     "required": [
         "items"
     ]
-}
+};

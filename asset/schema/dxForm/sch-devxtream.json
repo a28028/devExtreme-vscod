@@ -37,7 +37,6 @@
                     "items": {
                         "$ref": "#/definitions/tabitem"
                     }
-
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
@@ -109,7 +108,7 @@
                 }
             }
         },
-        "tabitem" :{
+        "tabitem": {
             "type": "object",
             "properties": {
                 "title": {
@@ -240,11 +239,19 @@
                 "maskRules": {
                     "type": "string"
                 },
-                "layout" : {
+                "layout": {
                     "type": "string",
                     "enum": [
                         "horizontal",
                         "vertical"
+                    ]
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "date",
+                        "datetime",
+                        "time"
                     ]
                 }
             }
