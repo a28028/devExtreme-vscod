@@ -41,7 +41,13 @@ schema.dxForm ={
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
                 },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
+                },
                 "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
                     "type": "string"
                 }
             }
@@ -79,6 +85,15 @@ schema.dxForm ={
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -105,6 +120,15 @@ schema.dxForm ={
                 },
                 "editorOptions": {
                     "$ref": "#/definitions/editorOptions"
+                },
+                "buttonOptions": {
+                    "$ref": "#/definitions/buttonOptions"
+                },
+                "caption": {
+                    "type": "string"
+                },
+                "cssClass": {
+                    "type": "string"
                 }
             }
         },
@@ -205,6 +229,20 @@ schema.dxForm ={
                 "type": "boolean"
             }
         },
+        "buttonOptions": {
+            "type": "object",
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "onClick": {
+                    "type": "string"
+                }
+            }
+        },
         "editorOptions": {
             "type": "object",
             "properties": {
@@ -261,7 +299,9 @@ schema.dxForm ={
             "enum": [
                 "",
                 "group",
-                "tabbed"
+                "tabbed",
+                "button",
+                "empty"
             ]
         }
     },
