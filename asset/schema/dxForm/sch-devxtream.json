@@ -97,6 +97,9 @@
                 },
                 "cssClass": {
                     "type": "string"
+                },
+                "template": {
+                    "type": "string"
                 }
             }
         },
@@ -131,6 +134,9 @@
                     "type": "string"
                 },
                 "cssClass": {
+                    "type": "string"
+                },
+                "template": {
                     "type": "string"
                 }
             }
@@ -295,13 +301,13 @@
                         "time"
                     ]
                 },
-                "tempparams1": {
+                "tempParamsA": {
                     "type": "string"
                 },
-                "tempparams2": {
+                "tempParamsB": {
                     "type": "string"
                 },
-                "tempparams3": {
+                "tempParamsC": {
                     "type": "string"
                 }
             }

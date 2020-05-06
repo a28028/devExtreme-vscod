@@ -1,4 +1,4 @@
-schema.dxForm ={
+schema.dxForm = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
         "formitems": {
@@ -98,6 +98,9 @@ schema.dxForm ={
                 },
                 "cssClass": {
                     "type": "string"
+                },
+                "template": {
+                    "type": "string"
                 }
             }
         },
@@ -132,6 +135,9 @@ schema.dxForm ={
                     "type": "string"
                 },
                 "cssClass": {
+                    "type": "string"
+                },
+                "template": {
                     "type": "string"
                 }
             }
@@ -296,13 +302,13 @@ schema.dxForm ={
                         "time"
                     ]
                 },
-                "tempparams1": {
+                "tempParamsA": {
                     "type": "string"
                 },
-                "tempparams2": {
+                "tempParamsB": {
                     "type": "string"
                 },
-                "tempparams3": {
+                "tempParamsC": {
                     "type": "string"
                 }
             }
