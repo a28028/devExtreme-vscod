@@ -49,6 +49,9 @@
                 },
                 "cssClass": {
                     "type": "string"
+                },
+                "template": {
+                    "type": "string"
                 }
             }
         },
