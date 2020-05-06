@@ -291,6 +291,15 @@ schema.dxForm ={
                         "datetime",
                         "time"
                     ]
+                },
+                "tempparams1": {
+                    "type": "string"
+                },
+                "tempparams2": {
+                    "type": "string"
+                },
+                "tempparams3": {
+                    "type": "string"
                 }
             }
         },
