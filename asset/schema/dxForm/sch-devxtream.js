@@ -49,7 +49,11 @@ schema.dxForm ={
                 },
                 "cssClass": {
                     "type": "string"
+                },
+                "template": {
+                    "type": "string"
                 }
+
             }
         },
         "formitems_level1": {
