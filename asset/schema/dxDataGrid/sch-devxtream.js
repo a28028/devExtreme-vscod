@@ -1,4 +1,4 @@
-schema.dxDataGrid = {
+schema.dxDataGrid ={
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
         "editorType": {
@@ -54,6 +54,12 @@ schema.dxDataGrid = {
                 },
                 "valueExpr": {
                     "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "showClearButton": {
+                    "type": "boolean"
                 }
             }
         },
@@ -67,6 +73,66 @@ schema.dxDataGrid = {
                     "type": "string"
                 },
                 "displayExpr": {
+                    "type": "string"
+                }
+            }
+        },
+        "validationRule" : {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "required",
+                        "numeric",
+                        "range",
+                        "stringLength",
+                        "custom",
+                        "compare",
+                        "pattern",
+                        "email",
+                        "async"
+                    ]
+                },
+                "message": {
+                    "type": "string"
+                },
+                "pattern": {
+                    "type": "string"
+                },
+                "trim" : {
+                    "type": "string"
+                },
+                "ignoreEmptyValue" : {
+                    "type": "boolean"
+
+                },
+                "max" : {
+                    "type": "string"
+                },
+                "min" : {
+                    "type": "string"
+                },
+                "reevaluate" : {
+                    "type": "boolean"
+                },
+                "validationCallback" : {
+                    "type": "string"
+                },
+                "comparisonType" : {
+                    "type": "string",
+                    "enum": [
+                        "!=",
+                        "!==",
+                        "<",
+                        "<=",
+                        "==",
+                        "===",
+                        ">",
+                        ">="
+                    ]
+                },
+                "comparisonTarget" : {
                     "type": "string"
                 }
             }
@@ -121,6 +187,13 @@ schema.dxDataGrid = {
                 },
                 "formItem": {
                     "$ref": "#/definitions/formItem"
+                },
+                "validationRules" :{
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "#/definitions/validationRule"
+                    }
                 }
             }
         },
@@ -154,7 +227,6 @@ schema.dxDataGrid = {
                     "type": "string",
                     "default": ""
                 },
-
                 "popup": {
                     "type": "string"
                 },
@@ -182,6 +254,24 @@ schema.dxDataGrid = {
                 "$ref": "#/definitions/column"
             }
         },
+        "columnChooser": {
+            "enabled": {
+                "type": "boolean",
+                "default": false
+            },
+            "allowSearch": {
+                "type": "boolean",
+                "default": false
+            },
+            "mode": {
+                "type": "string",
+                "enum": [
+                    "dragAndDrop",
+                    "select"
+                ],
+                "default": "dragAndDrop"
+            }
+        },
         "columnAutoWidth": {
             "type": "boolean",
             "default": false
@@ -193,19 +283,19 @@ schema.dxDataGrid = {
                     "type": "boolean",
                     "default": false
                 },
-                "grouping":  {
+                "grouping": {
                     "type": "boolean",
                     "default": false
                 },
-                "groupPaging":  {
+                "groupPaging": {
                     "type": "boolean",
                     "default": false
                 },
-                "paging":  {
+                "paging": {
                     "type": "boolean",
                     "default": false
                 },
-                "sorting":  {
+                "sorting": {
                     "type": "boolean",
                     "default": false
                 },

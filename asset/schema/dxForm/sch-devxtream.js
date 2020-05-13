@@ -25,6 +25,13 @@ schema.dxForm = {
                 "colCount": {
                     "type": "number"
                 },
+                "validationRules": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "#/definitions/validationRule"
+                    }
+                },
                 "items": {
                     "type": "array",
                     "uniqueItems": true,
@@ -53,7 +60,65 @@ schema.dxForm = {
                 "template": {
                     "type": "string"
                 }
-
+            }
+        },
+        "validationRule": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "required",
+                        "numeric",
+                        "range",
+                        "stringLength",
+                        "custom",
+                        "compare",
+                        "pattern",
+                        "email",
+                        "async"
+                    ]
+                },
+                "message": {
+                    "type": "string"
+                },
+                "pattern": {
+                    "type": "string"
+                },
+                "trim": {
+                    "type": "string"
+                },
+                "ignoreEmptyValue": {
+                    "type": "boolean"
+                },
+                "max": {
+                    "type": "string"
+                },
+                "min": {
+                    "type": "string"
+                },
+                "reevaluate": {
+                    "type": "boolean"
+                },
+                "validationCallback": {
+                    "type": "string"
+                },
+                "comparisonType": {
+                    "type": "string",
+                    "enum": [
+                        "!=",
+                        "!==",
+                        "<",
+                        "<=",
+                        "==",
+                        "===",
+                        ">",
+                        ">="
+                    ]
+                },
+                "comparisonTarget": {
+                    "type": "string"
+                }
             }
         },
         "formitems_level1": {
