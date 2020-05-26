@@ -359,6 +359,12 @@ schema.dxForm = {
                         "vertical"
                     ]
                 },
+                "mode": {
+                    "type": "string",
+                    "enum": [
+                        "password"
+                    ]
+                },
                 "type": {
                     "type": "string",
                     "enum": [
